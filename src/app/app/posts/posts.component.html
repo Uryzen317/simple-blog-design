@@ -1,0 +1,23 @@
+<div class="p-4 bg-white border-zinc-300 border shadow-md relative">
+  <h1 class="font-bold text-2xl text-blue-500">Posts</h1>
+  <p *ngIf="state != 'error'" class="text-sm text-zinc-500">
+    list of all posts available
+  </p>
+  <p *ngIf="state == 'error'" class="text-sm text-red-500">{{ status }}</p>
+  <hr class="my-4" />
+
+  <!-- posts -->
+  <div>
+    <!-- posts -->
+    <div class="flex justify-left flex-wrap gap-4">
+      <app-post-card
+        *ngFor="let result of results"
+        [post]="result"
+        class="grow shrink-0"
+      ></app-post-card>
+    </div>
+  </div>
+
+  <!-- loading -->
+  <app-loading *ngIf="state == 'loading'"></app-loading>
+</div>

@@ -1,0 +1,21 @@
+<a [href]="'#/post/' + post?._id">
+  <div
+    class="min-w-96 h-24 flex shadow-sm shadow-zinc-500 border border-zinc-400 p-2 gap-2 overflow-hidden cursor-pointer hover:shadow-md hover:border-zinc-200 transition-all"
+  >
+    <!-- image -->
+    <div
+      class="w-32 h-20 aspect-video border border-zinc-300 p-1 shadow-zinc-200 shadow-sm"
+    >
+      <img [src]="post?.pic" class="w-full h-full" />
+    </div>
+
+    <!-- metadata -->
+    <div>
+      <p class="font-bold text-zinc-600">{{ post?.title }}</p>
+      <p class="text-xs text-zinc-400">{{ post?.author?.username }}</p>
+      <p class="text-sm pt-1 text-zinc-600 text-justify">
+        {{ post?.description }}
+      </p>
+    </div>
+  </div>
+</a>
